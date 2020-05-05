@@ -1,0 +1,188 @@
+[2020-05-01 21:07:49] local.ERROR: Error: Call to a member function diffForHumans() on string in E:\xamp\htdocs\ramesbud\app\Note.php:29
+Stack trace:
+#0 E:\xamp\htdocs\ramesbud\vendor\illuminate\database\Eloquent\Concerns\HasAttributes.php(466): App\Note->getCreatedAtAttribute('2020-05-01T20:2...')
+#1 E:\xamp\htdocs\ramesbud\vendor\illuminate\database\Eloquent\Concerns\HasAttributes.php(480): Illuminate\Database\Eloquent\Model->mutateAttribute('created_at', '2020-05-01T20:2...')
+#2 E:\xamp\htdocs\ramesbud\vendor\illuminate\database\Eloquent\Concerns\HasAttributes.php(193): Illuminate\Database\Eloquent\Model->mutateAttributeForArray('created_at', '2020-05-01T20:2...')
+#3 E:\xamp\htdocs\ramesbud\vendor\illuminate\database\Eloquent\Concerns\HasAttributes.php(131): Illuminate\Database\Eloquent\Model->addMutatedAttributesToArray(Array, Array)
+#4 E:\xamp\htdocs\ramesbud\vendor\illuminate\database\Eloquent\Model.php(1117): Illuminate\Database\Eloquent\Model->attributesToArray()
+#5 E:\xamp\htdocs\ramesbud\vendor\illuminate\support\Traits\EnumeratesValues.php(760): Illuminate\Database\Eloquent\Model->toArray()
+#6 [internal function]: Illuminate\Support\Collection->Illuminate\Support\Traits\{closure}(Object(App\Note), 0)
+#7 E:\xamp\htdocs\ramesbud\vendor\illuminate\support\Collection.php(638): array_map(Object(Closure), Array, Array)
+#8 E:\xamp\htdocs\ramesbud\vendor\illuminate\database\Eloquent\Collection.php(254): Illuminate\Support\Collection->map(Object(Closure))
+#9 E:\xamp\htdocs\ramesbud\vendor\illuminate\support\Traits\EnumeratesValues.php(761): Illuminate\Database\Eloquent\Collection->map(Object(Closure))
+#10 E:\xamp\htdocs\ramesbud\vendor\illuminate\pagination\LengthAwarePaginator.php(166): Illuminate\Support\Collection->toArray()
+#11 E:\xamp\htdocs\ramesbud\vendor\illuminate\pagination\LengthAwarePaginator.php(187): Illuminate\Pagination\LengthAwarePaginator->toArray()
+#12 E:\xamp\htdocs\ramesbud\vendor\illuminate\pagination\LengthAwarePaginator.php(198): Illuminate\Pagination\LengthAwarePaginator->jsonSerialize()
+#13 E:\xamp\htdocs\ramesbud\vendor\illuminate\http\JsonResponse.php(65): Illuminate\Pagination\LengthAwarePaginator->toJson(0)
+#14 E:\xamp\htdocs\ramesbud\vendor\symfony\http-foundation\JsonResponse.php(50): Illuminate\Http\JsonResponse->setData(Object(Illuminate\Pagination\LengthAwarePaginator))
+#15 E:\xamp\htdocs\ramesbud\vendor\illuminate\http\JsonResponse.php(31): Symfony\Component\HttpFoundation\JsonResponse->__construct(Object(Illuminate\Pagination\LengthAwarePaginator), 200, Array)
+#16 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Http\ResponseFactory.php(40): Illuminate\Http\JsonResponse->__construct(Object(Illuminate\Pagination\LengthAwarePaginator), 200, Array, 0)
+#17 E:\xamp\htdocs\ramesbud\app\Http\Controllers\NotesController.php(23): Laravel\Lumen\Http\ResponseFactory->json(Object(Illuminate\Pagination\LengthAwarePaginator))
+#18 [internal function]: App\Http\Controllers\NotesController->index()
+#19 E:\xamp\htdocs\ramesbud\vendor\illuminate\container\BoundMethod.php(33): call_user_func_array(Array, Array)
+#20 E:\xamp\htdocs\ramesbud\vendor\illuminate\container\Util.php(36): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#21 E:\xamp\htdocs\ramesbud\vendor\illuminate\container\BoundMethod.php(91): Illuminate\Container\Util::unwrapIfClosure(Object(Closure))
+#22 E:\xamp\htdocs\ramesbud\vendor\illuminate\container\BoundMethod.php(35): Illuminate\Container\BoundMethod::callBoundMethod(Object(Laravel\Lumen\Application), Array, Object(Closure))
+#23 E:\xamp\htdocs\ramesbud\vendor\illuminate\container\Container.php(592): Illuminate\Container\BoundMethod::call(Object(Laravel\Lumen\Application), Array, Array, NULL)
+#24 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(376): Illuminate\Container\Container->call(Array, Array)
+#25 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(361): Laravel\Lumen\Application->callControllerCallable(Array, Array)
+#26 [internal function]: Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#27 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Routing\Pipeline.php(48): call_user_func(Object(Closure), Object(Laravel\Lumen\Http\Request))
+#28 E:\xamp\htdocs\ramesbud\app\Http\Middleware\Authenticate.php(42): Laravel\Lumen\Routing\Pipeline->Laravel\Lumen\Routing\{closure}(Object(Laravel\Lumen\Http\Request))
+#29 E:\xamp\htdocs\ramesbud\vendor\illuminate\pipeline\Pipeline.php(167): App\Http\Middleware\Authenticate->handle(Object(Laravel\Lumen\Http\Request), Object(Closure))
+#30 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Laravel\Lumen\Http\Request))
+#31 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Routing\Pipeline.php(30): call_user_func(Object(Closure), Object(Laravel\Lumen\Http\Request))
+#32 E:\xamp\htdocs\ramesbud\vendor\illuminate\pipeline\Pipeline.php(103): Laravel\Lumen\Routing\Pipeline->Laravel\Lumen\Routing\{closure}(Object(Laravel\Lumen\Http\Request))
+#33 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(413): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#34 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(362): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#35 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(338): Laravel\Lumen\Application->callLumenControllerWithMiddleware(Object(App\Http\Controllers\NotesController), 'index', Array, Array)
+#36 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(316): Laravel\Lumen\Application->callLumenController(Object(App\Http\Controllers\NotesController), 'index', Array)
+#37 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(278): Laravel\Lumen\Application->callControllerAction(Array)
+#38 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(263): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#39 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(165): Laravel\Lumen\Application->handleFoundRoute(Array)
+#40 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(416): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#41 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(171): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#42 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(108): Laravel\Lumen\Application->dispatch(NULL)
+#43 E:\xamp\htdocs\ramesbud\public\index.php(28): Laravel\Lumen\Application->run()
+#44 {main} {"exception":"[object] (Error(code: 0): Call to a member function diffForHumans() on string at E:\\xamp\\htdocs\amesbud\\app\\Note.php:29)
+[stacktrace]
+#0 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\database\\Eloquent\\Concerns\\HasAttributes.php(466): App\\Note->getCreatedAtAttribute('2020-05-01T20:2...')
+#1 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\database\\Eloquent\\Concerns\\HasAttributes.php(480): Illuminate\\Database\\Eloquent\\Model->mutateAttribute('created_at', '2020-05-01T20:2...')
+#2 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\database\\Eloquent\\Concerns\\HasAttributes.php(193): Illuminate\\Database\\Eloquent\\Model->mutateAttributeForArray('created_at', '2020-05-01T20:2...')
+#3 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\database\\Eloquent\\Concerns\\HasAttributes.php(131): Illuminate\\Database\\Eloquent\\Model->addMutatedAttributesToArray(Array, Array)
+#4 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\database\\Eloquent\\Model.php(1117): Illuminate\\Database\\Eloquent\\Model->attributesToArray()
+#5 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\support\\Traits\\EnumeratesValues.php(760): Illuminate\\Database\\Eloquent\\Model->toArray()
+#6 [internal function]: Illuminate\\Support\\Collection->Illuminate\\Support\\Traits\\{closure}(Object(App\\Note), 0)
+#7 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\support\\Collection.php(638): array_map(Object(Closure), Array, Array)
+#8 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\database\\Eloquent\\Collection.php(254): Illuminate\\Support\\Collection->map(Object(Closure))
+#9 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\support\\Traits\\EnumeratesValues.php(761): Illuminate\\Database\\Eloquent\\Collection->map(Object(Closure))
+#10 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\pagination\\LengthAwarePaginator.php(166): Illuminate\\Support\\Collection->toArray()
+#11 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\pagination\\LengthAwarePaginator.php(187): Illuminate\\Pagination\\LengthAwarePaginator->toArray()
+#12 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\pagination\\LengthAwarePaginator.php(198): Illuminate\\Pagination\\LengthAwarePaginator->jsonSerialize()
+#13 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\http\\JsonResponse.php(65): Illuminate\\Pagination\\LengthAwarePaginator->toJson(0)
+#14 E:\\xamp\\htdocs\amesbud\\vendor\\symfony\\http-foundation\\JsonResponse.php(50): Illuminate\\Http\\JsonResponse->setData(Object(Illuminate\\Pagination\\LengthAwarePaginator))
+#15 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\http\\JsonResponse.php(31): Symfony\\Component\\HttpFoundation\\JsonResponse->__construct(Object(Illuminate\\Pagination\\LengthAwarePaginator), 200, Array)
+#16 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Http\\ResponseFactory.php(40): Illuminate\\Http\\JsonResponse->__construct(Object(Illuminate\\Pagination\\LengthAwarePaginator), 200, Array, 0)
+#17 E:\\xamp\\htdocs\amesbud\\app\\Http\\Controllers\\NotesController.php(23): Laravel\\Lumen\\Http\\ResponseFactory->json(Object(Illuminate\\Pagination\\LengthAwarePaginator))
+#18 [internal function]: App\\Http\\Controllers\\NotesController->index()
+#19 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\container\\BoundMethod.php(33): call_user_func_array(Array, Array)
+#20 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#21 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\container\\BoundMethod.php(91): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#22 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#23 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\container\\Container.php(592): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#24 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(376): Illuminate\\Container\\Container->call(Array, Array)
+#25 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(361): Laravel\\Lumen\\Application->callControllerCallable(Array, Array)
+#26 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#27 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(48): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#28 E:\\xamp\\htdocs\amesbud\\app\\Http\\Middleware\\Authenticate.php(42): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#29 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\pipeline\\Pipeline.php(167): App\\Http\\Middleware\\Authenticate->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#30 [internal function]: Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#31 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#32 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\pipeline\\Pipeline.php(103): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#33 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(413): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#34 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(362): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#35 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(338): Laravel\\Lumen\\Application->callLumenControllerWithMiddleware(Object(App\\Http\\Controllers\\NotesController), 'index', Array, Array)
+#36 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(316): Laravel\\Lumen\\Application->callLumenController(Object(App\\Http\\Controllers\\NotesController), 'index', Array)
+#37 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(278): Laravel\\Lumen\\Application->callControllerAction(Array)
+#38 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(263): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#39 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(165): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#40 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(416): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#41 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(171): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#42 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(108): Laravel\\Lumen\\Application->dispatch(NULL)
+#43 E:\\xamp\\htdocs\amesbud\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#44 {main}
+"} 
+[2020-05-01 21:09:30] local.ERROR: Error: Call to a member function diffForHumans() on string in E:\xamp\htdocs\ramesbud\app\Note.php:32
+Stack trace:
+#0 E:\xamp\htdocs\ramesbud\vendor\illuminate\database\Eloquent\Concerns\HasAttributes.php(466): App\Note->getCreatedAtAttribute('2020-05-01T20:2...')
+#1 E:\xamp\htdocs\ramesbud\vendor\illuminate\database\Eloquent\Concerns\HasAttributes.php(480): Illuminate\Database\Eloquent\Model->mutateAttribute('created_at', '2020-05-01T20:2...')
+#2 E:\xamp\htdocs\ramesbud\vendor\illuminate\database\Eloquent\Concerns\HasAttributes.php(193): Illuminate\Database\Eloquent\Model->mutateAttributeForArray('created_at', '2020-05-01T20:2...')
+#3 E:\xamp\htdocs\ramesbud\vendor\illuminate\database\Eloquent\Concerns\HasAttributes.php(131): Illuminate\Database\Eloquent\Model->addMutatedAttributesToArray(Array, Array)
+#4 E:\xamp\htdocs\ramesbud\vendor\illuminate\database\Eloquent\Model.php(1117): Illuminate\Database\Eloquent\Model->attributesToArray()
+#5 E:\xamp\htdocs\ramesbud\vendor\illuminate\support\Traits\EnumeratesValues.php(760): Illuminate\Database\Eloquent\Model->toArray()
+#6 [internal function]: Illuminate\Support\Collection->Illuminate\Support\Traits\{closure}(Object(App\Note), 0)
+#7 E:\xamp\htdocs\ramesbud\vendor\illuminate\support\Collection.php(638): array_map(Object(Closure), Array, Array)
+#8 E:\xamp\htdocs\ramesbud\vendor\illuminate\database\Eloquent\Collection.php(254): Illuminate\Support\Collection->map(Object(Closure))
+#9 E:\xamp\htdocs\ramesbud\vendor\illuminate\support\Traits\EnumeratesValues.php(761): Illuminate\Database\Eloquent\Collection->map(Object(Closure))
+#10 E:\xamp\htdocs\ramesbud\vendor\illuminate\pagination\LengthAwarePaginator.php(166): Illuminate\Support\Collection->toArray()
+#11 E:\xamp\htdocs\ramesbud\vendor\illuminate\pagination\LengthAwarePaginator.php(187): Illuminate\Pagination\LengthAwarePaginator->toArray()
+#12 E:\xamp\htdocs\ramesbud\vendor\illuminate\pagination\LengthAwarePaginator.php(198): Illuminate\Pagination\LengthAwarePaginator->jsonSerialize()
+#13 E:\xamp\htdocs\ramesbud\vendor\illuminate\http\JsonResponse.php(65): Illuminate\Pagination\LengthAwarePaginator->toJson(0)
+#14 E:\xamp\htdocs\ramesbud\vendor\symfony\http-foundation\JsonResponse.php(50): Illuminate\Http\JsonResponse->setData(Object(Illuminate\Pagination\LengthAwarePaginator))
+#15 E:\xamp\htdocs\ramesbud\vendor\illuminate\http\JsonResponse.php(31): Symfony\Component\HttpFoundation\JsonResponse->__construct(Object(Illuminate\Pagination\LengthAwarePaginator), 200, Array)
+#16 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Http\ResponseFactory.php(40): Illuminate\Http\JsonResponse->__construct(Object(Illuminate\Pagination\LengthAwarePaginator), 200, Array, 0)
+#17 E:\xamp\htdocs\ramesbud\app\Http\Controllers\NotesController.php(23): Laravel\Lumen\Http\ResponseFactory->json(Object(Illuminate\Pagination\LengthAwarePaginator))
+#18 [internal function]: App\Http\Controllers\NotesController->index()
+#19 E:\xamp\htdocs\ramesbud\vendor\illuminate\container\BoundMethod.php(33): call_user_func_array(Array, Array)
+#20 E:\xamp\htdocs\ramesbud\vendor\illuminate\container\Util.php(36): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#21 E:\xamp\htdocs\ramesbud\vendor\illuminate\container\BoundMethod.php(91): Illuminate\Container\Util::unwrapIfClosure(Object(Closure))
+#22 E:\xamp\htdocs\ramesbud\vendor\illuminate\container\BoundMethod.php(35): Illuminate\Container\BoundMethod::callBoundMethod(Object(Laravel\Lumen\Application), Array, Object(Closure))
+#23 E:\xamp\htdocs\ramesbud\vendor\illuminate\container\Container.php(592): Illuminate\Container\BoundMethod::call(Object(Laravel\Lumen\Application), Array, Array, NULL)
+#24 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(376): Illuminate\Container\Container->call(Array, Array)
+#25 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(361): Laravel\Lumen\Application->callControllerCallable(Array, Array)
+#26 [internal function]: Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#27 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Routing\Pipeline.php(48): call_user_func(Object(Closure), Object(Laravel\Lumen\Http\Request))
+#28 E:\xamp\htdocs\ramesbud\app\Http\Middleware\Authenticate.php(42): Laravel\Lumen\Routing\Pipeline->Laravel\Lumen\Routing\{closure}(Object(Laravel\Lumen\Http\Request))
+#29 E:\xamp\htdocs\ramesbud\vendor\illuminate\pipeline\Pipeline.php(167): App\Http\Middleware\Authenticate->handle(Object(Laravel\Lumen\Http\Request), Object(Closure))
+#30 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Laravel\Lumen\Http\Request))
+#31 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Routing\Pipeline.php(30): call_user_func(Object(Closure), Object(Laravel\Lumen\Http\Request))
+#32 E:\xamp\htdocs\ramesbud\vendor\illuminate\pipeline\Pipeline.php(103): Laravel\Lumen\Routing\Pipeline->Laravel\Lumen\Routing\{closure}(Object(Laravel\Lumen\Http\Request))
+#33 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(413): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#34 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(362): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#35 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(338): Laravel\Lumen\Application->callLumenControllerWithMiddleware(Object(App\Http\Controllers\NotesController), 'index', Array, Array)
+#36 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(316): Laravel\Lumen\Application->callLumenController(Object(App\Http\Controllers\NotesController), 'index', Array)
+#37 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(278): Laravel\Lumen\Application->callControllerAction(Array)
+#38 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(263): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#39 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(165): Laravel\Lumen\Application->handleFoundRoute(Array)
+#40 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(416): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#41 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(171): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#42 E:\xamp\htdocs\ramesbud\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(108): Laravel\Lumen\Application->dispatch(NULL)
+#43 E:\xamp\htdocs\ramesbud\public\index.php(28): Laravel\Lumen\Application->run()
+#44 {main} {"exception":"[object] (Error(code: 0): Call to a member function diffForHumans() on string at E:\\xamp\\htdocs\amesbud\\app\\Note.php:32)
+[stacktrace]
+#0 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\database\\Eloquent\\Concerns\\HasAttributes.php(466): App\\Note->getCreatedAtAttribute('2020-05-01T20:2...')
+#1 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\database\\Eloquent\\Concerns\\HasAttributes.php(480): Illuminate\\Database\\Eloquent\\Model->mutateAttribute('created_at', '2020-05-01T20:2...')
+#2 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\database\\Eloquent\\Concerns\\HasAttributes.php(193): Illuminate\\Database\\Eloquent\\Model->mutateAttributeForArray('created_at', '2020-05-01T20:2...')
+#3 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\database\\Eloquent\\Concerns\\HasAttributes.php(131): Illuminate\\Database\\Eloquent\\Model->addMutatedAttributesToArray(Array, Array)
+#4 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\database\\Eloquent\\Model.php(1117): Illuminate\\Database\\Eloquent\\Model->attributesToArray()
+#5 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\support\\Traits\\EnumeratesValues.php(760): Illuminate\\Database\\Eloquent\\Model->toArray()
+#6 [internal function]: Illuminate\\Support\\Collection->Illuminate\\Support\\Traits\\{closure}(Object(App\\Note), 0)
+#7 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\support\\Collection.php(638): array_map(Object(Closure), Array, Array)
+#8 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\database\\Eloquent\\Collection.php(254): Illuminate\\Support\\Collection->map(Object(Closure))
+#9 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\support\\Traits\\EnumeratesValues.php(761): Illuminate\\Database\\Eloquent\\Collection->map(Object(Closure))
+#10 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\pagination\\LengthAwarePaginator.php(166): Illuminate\\Support\\Collection->toArray()
+#11 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\pagination\\LengthAwarePaginator.php(187): Illuminate\\Pagination\\LengthAwarePaginator->toArray()
+#12 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\pagination\\LengthAwarePaginator.php(198): Illuminate\\Pagination\\LengthAwarePaginator->jsonSerialize()
+#13 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\http\\JsonResponse.php(65): Illuminate\\Pagination\\LengthAwarePaginator->toJson(0)
+#14 E:\\xamp\\htdocs\amesbud\\vendor\\symfony\\http-foundation\\JsonResponse.php(50): Illuminate\\Http\\JsonResponse->setData(Object(Illuminate\\Pagination\\LengthAwarePaginator))
+#15 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\http\\JsonResponse.php(31): Symfony\\Component\\HttpFoundation\\JsonResponse->__construct(Object(Illuminate\\Pagination\\LengthAwarePaginator), 200, Array)
+#16 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Http\\ResponseFactory.php(40): Illuminate\\Http\\JsonResponse->__construct(Object(Illuminate\\Pagination\\LengthAwarePaginator), 200, Array, 0)
+#17 E:\\xamp\\htdocs\amesbud\\app\\Http\\Controllers\\NotesController.php(23): Laravel\\Lumen\\Http\\ResponseFactory->json(Object(Illuminate\\Pagination\\LengthAwarePaginator))
+#18 [internal function]: App\\Http\\Controllers\\NotesController->index()
+#19 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\container\\BoundMethod.php(33): call_user_func_array(Array, Array)
+#20 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\container\\Util.php(36): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#21 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\container\\BoundMethod.php(91): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#22 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\container\\BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#23 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\container\\Container.php(592): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#24 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(376): Illuminate\\Container\\Container->call(Array, Array)
+#25 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(361): Laravel\\Lumen\\Application->callControllerCallable(Array, Array)
+#26 [internal function]: Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#27 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(48): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#28 E:\\xamp\\htdocs\amesbud\\app\\Http\\Middleware\\Authenticate.php(42): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#29 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\pipeline\\Pipeline.php(167): App\\Http\\Middleware\\Authenticate->handle(Object(Laravel\\Lumen\\Http\\Request), Object(Closure))
+#30 [internal function]: Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#31 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Routing\\Pipeline.php(30): call_user_func(Object(Closure), Object(Laravel\\Lumen\\Http\\Request))
+#32 E:\\xamp\\htdocs\amesbud\\vendor\\illuminate\\pipeline\\Pipeline.php(103): Laravel\\Lumen\\Routing\\Pipeline->Laravel\\Lumen\\Routing\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#33 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(413): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#34 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(362): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#35 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(338): Laravel\\Lumen\\Application->callLumenControllerWithMiddleware(Object(App\\Http\\Controllers\\NotesController), 'index', Array, Array)
+#36 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(316): Laravel\\Lumen\\Application->callLumenController(Object(App\\Http\\Controllers\\NotesController), 'index', Array)
+#37 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(278): Laravel\\Lumen\\Application->callControllerAction(Array)
+#38 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(263): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#39 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(165): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#40 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(416): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#41 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(171): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#42 E:\\xamp\\htdocs\amesbud\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(108): Laravel\\Lumen\\Application->dispatch(NULL)
+#43 E:\\xamp\\htdocs\amesbud\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#44 {main}
+"} 

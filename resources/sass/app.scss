@@ -1,0 +1,19 @@
+@import '~@mdi/font/css/materialdesignicons.min.css';
+@import '~vuetify/dist/vuetify.min.css';
+a{
+  text-decoration: none;
+}
+.notes{
+  margin-top: 20px;
+  overflow-y: auto;
+  max-height: 500px;
+}
+.notes-card{
+  margin: 10px;
+}
+.text-center{
+  text-align: center;
+}
+.mt50{
+  margin-top: 50px;
+}
